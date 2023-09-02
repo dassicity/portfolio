@@ -1,9 +1,137 @@
 .body {
-    background-color: bisque;
+    background-color: #ed9f66;
+    color: #854836;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
-a {
-    color: darkred;
-    text-align: center;
+.center {
+    /* display: flex; */
+    justify-content: center;
+    margin-left: 35rem;
+    margin-right: 35rem;
+    text-align: left;
+}
 
+.proj {
+    font-size: 5rem;
+    margin-top: 4rem;
+}
+
+.element {
+    padding: 1rem;
+}
+
+.title {
+    font-weight: 900;
+    color: #854836;
+}
+
+.nil {
+    color: #854836;
+    font-size: 7rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.nil-force {
+    font-weight: 900;
+}
+
+.tech {
+    font-size: 3.5rem;
+    margin: 1rem;
+    padding: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+.menu-element {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    font-size: 5rem;
+    color: #854836;
+    text-decoration: none;
+}
+
+.menu-element:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.contact {
+    font-size: 2rem;
+    color: #854836;
+    padding: 1.5rem;
+}
+
+.contact-element {
+    color: #854836;
+    text-decoration: none;
+}
+
+.contact-element:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.resume {
+    /* margin: 3.5rem; */
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.about {
+    justify-content: center;
+    margin-left: 35rem;
+    margin-right: 35rem;
+    text-align: justify;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.education {
+    justify-content: center;
+    margin-left: 30rem;
+    margin-right: 30rem;
+    padding-top: 4rem;
+}
+
+.education-title {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.education-element {
+    font-size: 1.5rem;
+    text-align: justify;
+    padding: 1rem;
+}
+
+.skills {
+    justify-content: center;
+    margin-left: 30rem;
+    margin-right: 30rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.skills-title {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.skills-element {
+    font-size: 1.5rem;
+    text-align: justify;
+    padding: 1rem;
 }
