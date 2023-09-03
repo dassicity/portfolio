@@ -12,17 +12,46 @@
 </head>
 
 <body class="body">
+    <header>
+        <nav class="nav-menu">
+            <div>
+                <a href="#">Epiphany</a>
+            </div>
 
-    <h2 class="proj">Hello there!</h2>
+            <div>
+                <ul>
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#proj" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <h2 class="proj">Hello there!</h2> -->
+    <div class="menu">
+        <a class="menu-element" href="#about">About</a>
+        <a class="menu-element" href="#projects">Projects</a>
+        <a class="menu-element" href="blog.html">Blog</a>
+    </div>
+
+    <!-- <div class="gif">
+        <iframe src="hello-1261.gif" width="100%" height="100%"></iframe>
+    </div> -->
+
+    <!-- <div class="gif">
+        <img src="giphy.gif" class="gif-inside">
+    </div> -->
 
     <div class="nil">I am <a class="nil-force">Soumyanil Das</a>.</div>
     <div class="tech">A technologist, percussionist, photographer and an avid reader.</div>
 
-    <div class="menu">
-        <a class="menu-element" href="about.html">About</a>
-        <a class="menu-element" href="projects.html">Projects</a>
-        <a class="menu-element" href="blog.html">Blog</a>
-    </div>
 
     <div class="contact">
         Connect with me -
@@ -31,7 +60,153 @@
         <a class="contact-element" href="https://www.twitter.com/dassicity" target="_blank">Twitter</a>
     </div>
 
-    <div class="resume">If you're looking to hire me, here's my resume.</div>
+    <div class="resume">If you're looking to hire me, here's my <a href="resume_das.pdf" target="_blank">resume</a>.
+    </div>
+
+    <section id="about">
+        <h2 class="proj">About Me</h2>
+
+        <div class="about-container">
+            <div class="image">
+                <img src="riviera-removebg.png" alt="">
+            </div>
+
+            <div class="about">
+                I am a senior studying computer science, looking to complete my B.Tech degree.
+                I am mainly interested in the magic that happens underneath any complex system.
+                I love backend engineering and systems engineering. I try to create everyday things to better understand
+                them.
+                I firmly believe Feynman's words - "What I cannot create, I do not understand".
+                Few years back, I used to think Git was magic. But ever since I created my own version
+                control system in python, I have been at peace. Currently I am implementing Redis and a KV pair basic
+                database.
+                <p>
+
+
+                </p>
+
+
+                I am also a part time photographer and drummer. I have been around music since my childhood.
+                I started learning tabla when I was 4 and I have passed the 7th year (equivalent to a Ph.D lol) from
+                Bangiya
+                Sangeet Parishad in tabla.
+                But since 9th grade, I have mostly played drums in my school band and later in my college as well.
+                I am a huge fan of FC Barcelona and of football in general. I also watch Formula One in my free time,
+                mostly
+                supporting Ferrari and Red Bull.
+                I essentially want to become a polymath as my interest lie over a variety of domains and fields.
+            </div>
+
+        </div>
+
+
+
+        <div class="education">
+            <a class="education-title">Education</a>
+            <ul>
+                <li class="education-element">
+                    <a>Bachelor of Technology from Haldia Institute of Technology with 9.33 CGPA. </a>
+                </li>
+                <li class="education-element">
+                    <a>Indian School Certificate from Bishop Morrow School with 86% marks. </a>
+                </li>
+                <li class="education-element">
+                    <a>Indian Certificate in Secondary Education from Bishop Morrow School with 95% marks. </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="skills">
+            <a class="skills-title">Skills</a>
+            <ul>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">C/C++</a> - POSIX standards, termios and general systems development
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">JavaScript</a> - Nodejs, Express and other intermediate stuff
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">Python</a> - Django and basics
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">GoLang</a> - Basics and Gin
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">Rust</a> - Just started learning it
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">Networking</a> - Have worked with packet sniffers. Hope to write my own
+                    protocol one day
+                </li>
+                <li class="skills-element">
+                    <a style="font-weight: 600;">Git</a> - Have implemented my own version control system. I also know
+                    the
+                    algorithm behind Git rebase.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="proj">My Projects</h2>
+
+        <ul class="center">
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/vControl">VERC</a> (Unfinished) - A version control
+                system implemented
+                in Python using the same architecture and encryption/file system mechanism used by Git.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/meet-app">Video Chat Application</a> - A clone of
+                google
+                meet made
+                using WebRTC and sockets in Nodejs.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/chat-app">Chat Application</a> - A chat application
+                with
+                structured
+                rooms made using Web Sockets provided by sockets.io
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/load-balancer">Load Balancer</a> - A basic Load
+                Balancer
+                made in
+                GoLang using Round Robin technique.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/image-commerce">E-commerce API</a> - An API to sell
+                Images
+                using Nodejs and MongoDb. Implemented authentication,
+                checkout using stripe and different flow for sellers and buyers.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/url-shortener">URL Shortener</a> - A basic URL
+                shortener
+                made using
+                Nodejs and SQL. It can also be used to hide or encrypt URLs
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/social-media-api">Social media API</a> - A basic API
+                implemented using
+                Nodejs and Express to serve data to any social media frontend including seperate routes for creating and
+                viewing posts and web sockets for real time updates.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/node-practice/tree/main/second-app-nosql">E-commerce
+                    Website</a> - A
+                full stack e-commerce website to sell products made using Express and Vanilla JS.
+            </li>
+            <li class="element">
+                <a class="title" href="https://github.com/dassicity/text_editor">Text Editor</a>(Unfinished) - A vim
+                like
+                text editor made
+                in C.
+            </li>
+        </ul>
+    </section>
 </body>
 
 </html>
