@@ -1,6 +1,6 @@
 .body {
-    background-color: #c99b9b;
-    color: #861607;
+    background-color: #fff;
+    color: #86520d;
     font-size: xx-large;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -9,7 +9,7 @@
 }
 
 a {
-    color: #861607;
+    color: #86520d;
 }
 
 .center {
@@ -31,11 +31,11 @@ a {
 
 .title {
     font-weight: 900;
-    color: #861607;
+    color: #86520d;
 }
 
 .nil {
-    color: #861607;
+    color: #86520d;
     font-size: 7rem;
     text-align: center;
     padding: 2rem;
@@ -62,7 +62,7 @@ a {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
     font-size: 3rem;
-    color: #861607;
+    color: #86520d;
     text-decoration: none;
 }
 
@@ -73,12 +73,12 @@ a {
 
 .contact {
     font-size: 2rem;
-    color: #861607;
+    color: #86520d;
     padding: 1.5rem;
 }
 
 .contact-element {
-    color: #861607;
+    color: #86520d;
     text-decoration: none;
 }
 
@@ -198,8 +198,8 @@ a {
 
 @media screen and (max-width: 944px) {
     .body {
-        background-color: #c99b9b;
-        color: #861607;
+        background-color: #fff;
+        color: #86520d;
         font-size: medium;
         font-family: 'Roboto', sans-serif;
         text-align: center;
@@ -208,7 +208,7 @@ a {
     }
 
     a {
-        color: #861607;
+        color: #86520d;
     }
 
     .center {
@@ -231,11 +231,11 @@ a {
 
     .title {
         font-weight: 900;
-        color: #861607;
+        color: #86520d;
     }
 
     .nil {
-        color: #861607;
+        color: #86520d;
         font-size: 3rem;
         text-align: center;
         padding: 0.5rem;
@@ -262,7 +262,7 @@ a {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         font-size: 1.5rem;
-        color: #861607;
+        color: #86520d;
         text-decoration: none;
     }
 
@@ -273,12 +273,12 @@ a {
 
     .contact {
         font-size: 1rem;
-        color: #861607;
+        color: #86520d;
         padding: 0.5rem;
     }
 
     .contact-element {
-        color: #861607;
+        color: #86520d;
         text-decoration: none;
     }
 
