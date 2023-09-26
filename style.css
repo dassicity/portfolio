@@ -1,6 +1,6 @@
 .body {
-    background-color: #fff;
-    color: #86520d;
+    background-color: #e0e0e0;
+    color: #aa600b;
     font-size: xx-large;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -9,7 +9,7 @@
 }
 
 a {
-    color: #86520d;
+    color: #aa600b;
 }
 
 .center {
@@ -31,11 +31,11 @@ a {
 
 .title {
     font-weight: 900;
-    color: #86520d;
+    color: #aa600b;
 }
 
 .nil {
-    color: #86520d;
+    color: #aa600b;
     font-size: 7rem;
     text-align: center;
     padding: 2rem;
@@ -62,7 +62,7 @@ a {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
     font-size: 3rem;
-    color: #86520d;
+    color: #aa600b;
     text-decoration: none;
 }
 
@@ -73,12 +73,12 @@ a {
 
 .contact {
     font-size: 2rem;
-    color: #86520d;
+    color: #aa600b;
     padding: 1.5rem;
 }
 
 .contact-element {
-    color: #86520d;
+    color: #aa600b;
     text-decoration: none;
 }
 
@@ -196,10 +196,57 @@ a {
 
 }
 
+.drum-head {
+    margin-top: 3.5rem;
+    /* margin-bottom: .5rem; */
+    font-size: 4.5rem;
+}
+
+.drum-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.drum-item {
+    margin-right: 5rem;
+    margin-left: 5rem;
+    fill: #aa600b;
+}
+
+.drum-letters {
+    font-size: 3.3rem;
+    transform: translateZ(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 32px;
+    height: 32px; */
+    background-color: rgba(158, 161, 169, 0.11);
+    border-radius: 1px;
+    color: #666565;
+    cursor: pointer;
+}
+
+.drum-letters-click {
+    font-size: 3.3rem;
+    transform: translateZ(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 32px;
+    height: 32px; */
+    background-color: #aa600b;
+    border-radius: 1px;
+    color: #666565;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 944px) {
     .body {
-        background-color: #fff;
-        color: #86520d;
+        background-color: #e0e0e0;
+        color: #aa600b;
         font-size: medium;
         font-family: 'Roboto', sans-serif;
         text-align: center;
@@ -208,7 +255,7 @@ a {
     }
 
     a {
-        color: #86520d;
+        color: #aa600b;
     }
 
     .center {
@@ -231,11 +278,11 @@ a {
 
     .title {
         font-weight: 900;
-        color: #86520d;
+        color: #aa600b;
     }
 
     .nil {
-        color: #86520d;
+        color: #aa600b;
         font-size: 3rem;
         text-align: center;
         padding: 0.5rem;
@@ -262,7 +309,7 @@ a {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         font-size: 1.5rem;
-        color: #86520d;
+        color: #aa600b;
         text-decoration: none;
     }
 
@@ -273,12 +320,12 @@ a {
 
     .contact {
         font-size: 1rem;
-        color: #86520d;
+        color: #aa600b;
         padding: 0.5rem;
     }
 
     .contact-element {
-        color: #86520d;
+        color: #aa600b;
         text-decoration: none;
     }
 
