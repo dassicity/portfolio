@@ -2,7 +2,8 @@
     background-color: #e0e0e0;
     color: #aa600b;
     font-size: xx-large;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     text-align: center;
     /* display: flex; */
     /* justify-content: center; */
@@ -97,7 +98,7 @@ a {
     justify-content: center;
     /* margin-left: 20%; */
     margin-right: 20%;
-    text-align: justify;
+    text-align: left;
     font-size: 1.5rem;
     font-weight: 400;
     padding-top: 2rem;
@@ -248,7 +249,7 @@ a {
         background-color: #e0e0e0;
         color: #aa600b;
         font-size: medium;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'IBM Plex Sans', sans-serif;
         text-align: center;
         /* display: flex; */
         /* justify-content: center; */
@@ -345,7 +346,7 @@ a {
         /* margin-left: 20%; */
         margin-right: 5%;
         margin-left: 5%;
-        text-align: justify;
+        text-align: left;
         font-size: 1rem;
         font-weight: 400;
         padding-top: 0.5rem;
@@ -447,5 +448,57 @@ a {
         justify-content: center;
 
 
+    }
+
+    .drum-head {
+        margin-top: 1.5rem;
+        /* margin-bottom: .5rem; */
+        font-size: 1.5rem;
+    }
+
+    .drum-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .drum-item {
+        margin-right: 1.2rem;
+        margin-left: 1.2rem;
+        fill: #aa600b;
+    }
+
+    .drum-letters {
+        font-size: 1.3rem;
+        transform: translateZ(0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 32px;
+        height: 32px; */
+        background-color: rgba(158, 161, 169, 0.11);
+        border-radius: 1px;
+        color: #666565;
+        cursor: pointer;
+    }
+
+    .drum-letters-click {
+        font-size: 3.3rem;
+        transform: translateZ(0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 32px;
+        height: 32px; */
+        background-color: #aa600b;
+        border-radius: 1px;
+        color: #666565;
+        cursor: pointer;
+    }
+
+    .vector {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 }
