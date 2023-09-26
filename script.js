@@ -67,27 +67,32 @@ document.onkeydown = (event) => {
     }
 
     if (event.which == "81") {
-        sounds['kick'].pause();
+        sounds['kick'].currentTime = 0;
         sounds['kick'].play();
         keyHandler(kick);
     }
     if (event.which == "87") {
+        sounds['snare'].currentTime = 0;
         sounds['snare'].play();
         keyHandler(snare);
     }
     if (event.which == "69") {
+        sounds['clap'].currentTime = 0;
         sounds['clap'].play();
         keyHandler(clap);
     }
     if (event.which == "82") {
+        sounds['closed'].currentTime = 0;
         sounds['closed'].play();
         keyHandler(closed);
     }
     if (event.which == "84") {
+        sounds['open'].currentTime = 0;
         sounds['open'].play();
         keyHandler(open);
     }
     if (event.which == "89") {
+        sounds['cymbal'].currentTime = 0;
         sounds['cymbal'].play();
         keyHandler(cymbal);
     }
