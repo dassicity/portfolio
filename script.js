@@ -66,6 +66,11 @@ document.onkeydown = (event) => {
         }, 100);
     }
 
+    if (event.ctrlKey == true) {
+        event.preventDefault;
+        return;
+    }
+
     if (event.which == "81") {
         sounds['kick'].currentTime = 0;
         sounds['kick'].play();
