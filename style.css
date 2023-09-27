@@ -513,4 +513,16 @@ a {
         width: 1.2rem;
         height: 1.2rem;
     }
+
+    .blog {
+        /* display: flex; */
+        justify-content: center;
+        text-align: justify;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .blog-image {
+        width: 90%
+    }
 }
