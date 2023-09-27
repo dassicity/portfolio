@@ -244,6 +244,18 @@ a {
     cursor: pointer;
 }
 
+.blog {
+    /* display: flex; */
+    justify-content: center;
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.blog-image {
+    width: 50%
+}
+
 @media screen and (max-width: 944px) {
     .body {
         background-color: #e0e0e0;
