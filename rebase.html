@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Roboto:wght@300;400;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="letter-d.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+
+    <h1>Breaking down `git rebase`</h1>
+
+    <h3>Brief picture of Git's architecture</h3>
+
+    <p class="blog">
+        Everything in git is an object. Think of an object as a binary file, with its contents in a specific manner.
+        There
+        are four types of objects in git - blob, commit, tag or tree. We'll mostly deal with the commit object. This is
+        how
+        a commit object looks like -
+    </p>
+
+    <img src="commit.jpg" alt="A typical commit message" style="max-width: 75%;">
+
+    <p class="blog">
+        Now, this object is compressed into a binary file, and the SHA-1 hash of this is computed. The first two
+        characters
+        of the hash is used as the name of the directory and the remaining characters are used as a name to this file
+        which
+        is stored in the directory mentioned.
+    </p>
+
+    <p class="blog">
+        The .git ( '.' here refers to a hidden directory in unix-like systems) directory which is formed after git init
+        consists of the following repositories (directories or folders) -
+    </p>
+
+    <ul class="blog">
+        <li>.git/objects/ : the object store</li>
+        <li>.git/refs/ the reference store. It contains two subdirectories, heads and tags.</li>
+        <li>.git/HEAD, a reference to the current HEAD</li>
+        <li>.git/config, the repository's configuration file.</li>
+        <li>.git/description, holds a free-form description of this repository's contents, for humans, and is rarely
+            used.</li>
+    </ul>
+
+    <p class="blog">
+        All the objects mentioned previously are stored in the .git/objects/ repository or directory.
+    </p>
+
+    <p class="blog">
+        The parent field in the commit message (actually a key-value; where a ASCII space acts as delimiter) might be
+        more
+        in numbers (in case of a merge commit) or not be present at all (in case of the first commit). This key - parent
+        holds the value of the hash of the previous commit.
+    </p>
+
+    <p class="blog">
+        We can easily retrieve that using the first two characters as directory path and the remaining characters as the
+        path of the file inside the directory.
+    </p>
+
+    <p class="blog">
+        Now, git rebase actually rewrites history !
+    </p>
+
+
+    <h3>What is git rebase ?</h3>
+
+    <p class="blog">
+        When multiple branches are created in the git working tree, they need to be merged so that the changes are
+        applied
+        to the HEAD (the current instance or commit). Git rebase clears the history of another branch and adds all the
+        commits of the deleted branch to the current branch in a linear manner. This picture might help understand it
+        better
+        -
+    </p>
+
+    <img src="rebase.png" alt="A diagram explaining git rebase" style="max-width: 75%;">
+
+    <p class="blog">
+        Rebase means changing the base. So this command changes the base or the parent of the first commit of that
+        specific
+        branch to the latest commit of the current branch.
+    </p>
+
+
+    <h3>How is git rebase implemented ?</h3>
+
+    <p class="blog">
+        The actual rebase algorithm has been modified a number of times which brings it to its current state. But we'll
+        consider the original algorithm for simplicity.
+    </p>
+
+    <p class="blog">
+        Git first identifies a common ancestor of both the branches and starts from there. It takes up the next commit
+        in
+        the branch to be rebased after the common ancestor and cherry-picks it with the latest commit of the current
+        branch.
+        Git cherry-pick is another command which computes the git diff of both the commits and picks the changes that
+        were
+        made and stores them.
+    </p>
+
+    <p class="blog">
+        In case of rebase, after git cherry-pick is run, the changes are stored in a temporary patch. The patch is then
+        applied over the latest commit of the current branch and a new commit is created with the latest commit of the
+        current branch as its parent. The latest commit is then updated to the newly created commit.
+    </p>
+
+    <p class="blog">
+        It might seem, on first look, that git simply changes the parent of the commit to be rebased. But as explained
+        in
+        git's architecture section, an object is identified by its contents (SHA-1 hash of its contents). If the
+        contents of
+        an object changes (in this case the parent), then it is entirely a new object. And in this case an entirely new
+        commit.
+    </p>
+
+    <p class="blog">
+        So, the process of git cherry-pick is done until it reaches the last commit of the branch to be rebased, when it
+        simply points the HEAD to the latest newly created commit.
+    </p>
+
+
+    <p class="blog" style="margin-bottom: 7%;">
+        This original git rebase algorithm has undergone certain subtle changes but the main idea is still the same. To
+        get a complete hang of rebase' current implementation
+        visit <a href="https://github.com/git/git/blob/master/rebase-interactive.c" target="_blank">the source code of
+            interactive
+            rebase</a> and the original <a href="https://github.com/git/git/blob/master/rebase.c" target="_blank">git
+            rebase</a>.
+    </p>
+
+</body>
+
+</html>
