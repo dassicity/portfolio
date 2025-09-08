@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Click handlers for drum items
-    document.querySelectorAll('.drum-item').forEach(item => {
+    // Click handlers for drum items (all interfaces)
+    document.querySelectorAll('.drum-item, .drum-terminal-item, .audio-bar').forEach(item => {
         item.addEventListener('click', function () {
             const key = this.getAttribute('data-key');
             const instrument = keyMap[key];

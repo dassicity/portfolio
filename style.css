@@ -218,24 +218,163 @@ a:hover {
     border-bottom: 1px solid var(--border-color);
 }
 
-.drum-title {
+/* Option 2: Terminal-Style Interface */
+.terminal-window {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+    background: var(--accent-bg);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-dot.red {
+    background: #ff5f56;
+}
+
+.terminal-dot.yellow {
+    background: #ffbd2e;
+}
+
+.terminal-dot.green {
+    background: #27ca3f;
+}
+
+.terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.terminal-content {
+    padding: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+}
+
+.terminal-prompt {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.terminal-command {
+    color: var(--text-primary);
+}
+
+.terminal-output {
+    color: var(--text-secondary);
+}
+
+.terminal-cursor {
+    color: var(--accent-color);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.drum-terminal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.drum-terminal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--accent-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drum-terminal-item:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.drum-terminal-item.active {
+    border-color: var(--accent-color);
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.drum-command {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.drum-hotkey {
+    color: var(--accent-color);
+    font-weight: 600;
+    background: var(--primary-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+}
+
+/* Option 3: Audio Visualizer */
+.audio-visualizer {
     text-align: center;
-    font-size: 1.5rem;
+    margin-top: 4rem;
+}
+
+.drum-subtitle {
     color: var(--text-secondary);
     margin-bottom: 3rem;
     font-weight: 300;
 }
 
-.drum-kit {
+.visualizer-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.drum-item {
+.audio-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,46 +383,54 @@ a:hover {
     background: var(--accent-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    transition: all 0.3s ease;
     cursor: pointer;
-    min-width: 80px;
+    transition: all 0.3s ease;
+    min-width: 100px;
 }
 
-.drum-item:hover {
+.audio-bar:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px var(--shadow);
-    transform: translateY(-2px);
 }
 
-.drum-icon {
-    width: 40px;
-    height: 40px;
-    fill: var(--text-secondary);
-    transition: fill 0.3s ease;
-}
-
-.drum-item:hover .drum-icon {
-    fill: var(--accent-color);
-}
-
-.drum-key {
+.bar-label {
     font-family: var(--font-mono);
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.bar-fill {
+    width: 8px;
+    height: 60px;
+    background: var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: var(--accent-color);
+    transition: height 0.3s ease;
+}
+
+.audio-bar.active .bar-fill::after {
+    height: 100%;
+}
+
+.bar-key {
+    font-family: var(--font-mono);
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
     background: var(--primary-bg);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     border: 1px solid var(--border-color);
-}
-
-.drum-item.active {
-    border-color: var(--accent-color);
-    background: rgba(0, 255, 136, 0.1);
-}
-
-.drum-item.active .drum-icon {
-    fill: var(--accent-color);
 }
 
 /* Sections */
