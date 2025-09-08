@@ -1,105 +1,74 @@
-const kick = document.querySelector("#key-kick");
-const snare = document.querySelector("#key-snare");
-const clap = document.querySelector("#key-clap");
-const closed = document.querySelector("#key-closed");
-const open = document.querySelector("#key-open");
-const cymbal = document.querySelector("#key-cymbal");
+// Modern Drum Kit JavaScript
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize sounds
+    const instruments = ['kick', 'snare', 'clap', 'open', 'closed', 'cymbal'];
+    const sounds = {};
 
-const instruments = ['kick', 'snare', 'clap', 'open', 'closed', 'cymbal'];
-let sounds = {};
-instruments.forEach(instrument => {
-    sounds[instrument] = new Audio('sounds/' + instrument + '.wav')
+    instruments.forEach(instrument => {
+        sounds[instrument] = new Audio(`sounds/${instrument}.wav`);
+        sounds[instrument].preload = 'auto';
+    });
+
+    // Key mapping
+    const keyMap = {
+        'Q': 'kick',
+        'W': 'snare',
+        'E': 'clap',
+        'R': 'closed',
+        'T': 'open',
+        'Y': 'cymbal'
+    };
+
+    // Play sound and add visual feedback
+    function playSound(instrument) {
+        const sound = sounds[instrument];
+        if (sound) {
+            sound.currentTime = 0;
+            sound.play().catch(e => console.log('Audio play failed:', e));
+        }
+
+        // Add visual feedback
+        const drumItem = document.querySelector(`[data-key="${Object.keys(keyMap).find(key => keyMap[key] === instrument)}"]`);
+        if (drumItem) {
+            drumItem.classList.add('active');
+            setTimeout(() => {
+                drumItem.classList.remove('active');
+            }, 150);
+        }
+    }
+
+    // Click handlers for drum items
+    document.querySelectorAll('.drum-item').forEach(item => {
+        item.addEventListener('click', function () {
+            const key = this.getAttribute('data-key');
+            const instrument = keyMap[key];
+            if (instrument) {
+                playSound(instrument);
+            }
+        });
+    });
+
+    // Keyboard handlers
+    document.addEventListener('keydown', function (event) {
+        if (event.repeat) return;
+
+        const key = event.key.toUpperCase();
+        const instrument = keyMap[key];
+
+        if (instrument) {
+            event.preventDefault();
+            playSound(instrument);
+        }
+    });
+
+    // Add hover effects
+    document.querySelectorAll('.drum-item').forEach(item => {
+        item.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-2px)';
+        });
+
+        item.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });
-
-
-function mouseHandler(inputSound) {
-    inputSound.classList.add('drum-letters-click');
-    // inputSound.querySelector(".drum-machine__item-glyph").classList.remove('sound-played-glyph');
-    setTimeout(function () {
-        inputSound.classList.remove('drum-letters-click');
-        // inputSound.querySelector(".drum-machine__item-glyph").classList.add('sound-played-glyph');
-    }, 100);
-}
-
-
-kick.addEventListener("click", () => {
-    sounds['kick'].play();
-    mouseHandler(kick);
-});
-
-snare.addEventListener("click", () => {
-    sounds['snare'].play();
-    mouseHandler(snare);
-});
-
-clap.addEventListener("click", () => {
-    sounds['clap'].play();
-    mouseHandler(clap);
-});
-
-closed.addEventListener("click", () => {
-    sounds['closed'].play();
-    mouseHandler(closed);
-});
-
-open.addEventListener("click", () => {
-    sounds['open'].play();
-    mouseHandler(open);
-});
-
-cymbal.addEventListener("click", () => {
-    sounds['cymbal'].play();
-    mouseHandler(cymbal);
-});
-
-document.onkeydown = (event) => {
-    if (event.repeat) {
-        return;
-    }
-
-    function keyHandler(inputSound) {
-        inputSound.classList.add('drum-letters-click');
-        // inputSound.querySelector(".drum-machine__item-glyph").classList.remove('sound-played-glyph');
-        setTimeout(function () {
-            inputSound.classList.remove('drum-letters-click');
-            // inputSound.querySelector(".drum-machine__item-glyph").classList.add('sound-played-glyph');
-        }, 100);
-    }
-
-    if (event.ctrlKey == true) {
-        event.preventDefault;
-        return;
-    }
-
-    if (event.which == "81") {
-        sounds['kick'].currentTime = 0;
-        sounds['kick'].play();
-        keyHandler(kick);
-    }
-    if (event.which == "87") {
-        sounds['snare'].currentTime = 0;
-        sounds['snare'].play();
-        keyHandler(snare);
-    }
-    if (event.which == "69") {
-        sounds['clap'].currentTime = 0;
-        sounds['clap'].play();
-        keyHandler(clap);
-    }
-    if (event.which == "82") {
-        sounds['closed'].currentTime = 0;
-        sounds['closed'].play();
-        keyHandler(closed);
-    }
-    if (event.which == "84") {
-        sounds['open'].currentTime = 0;
-        sounds['open'].play();
-        keyHandler(open);
-    }
-    if (event.which == "89") {
-        sounds['cymbal'].currentTime = 0;
-        sounds['cymbal'].play();
-        keyHandler(cymbal);
-    }
-
-}
