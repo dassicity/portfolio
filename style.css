@@ -531,6 +531,146 @@ a:hover {
     font-weight: 600;
 }
 
+/* Work Experience Section */
+.work-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.work-item {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.work-item:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.work-item::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-item:hover::before {
+    opacity: 1;
+}
+
+.work-header {
+    margin-bottom: 1.5rem;
+}
+
+.work-title {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.work-company {
+    margin-bottom: 0.5rem;
+}
+
+.company-link {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.company-link:hover {
+    color: var(--accent-color);
+}
+
+.work-duration {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    background: var(--accent-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.work-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.work-description p {
+    margin-bottom: 1rem;
+}
+
+.work-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.work-skills li {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.work-achievements {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.work-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.work-achievements li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.work-item.current {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px var(--shadow);
+}
+
+.work-item.current::before {
+    opacity: 1;
+}
+
+.work-item.current .work-duration {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    font-weight: 600;
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
